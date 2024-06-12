@@ -24,6 +24,8 @@ try {
         echo "<p>" . htmlspecialchars($row['body']) . "</p>";
     }
 } catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    if (getenv('ENV') == 'dev') {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
 }
 ?>

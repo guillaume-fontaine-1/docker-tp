@@ -7,7 +7,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: docker_doc
       MYSQL_USER: db_client
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
@@ -17,7 +16,7 @@ services:
   client:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./php/Dockerfile
     container_name: client
     restart: always
     depends_on:

@@ -32,7 +32,6 @@ restart: down up-dev
 clean: down
 	$(DOCKER_COMPOSE) down --volumes --remove-orphans
 	$(DOCKER_COMPOSE) rm -f
-	$(DOCKER_COMPOSE) rmi -f
 
 # Ouvrir une session bash dans le conteneur MySQL
 exec-db-shell:
