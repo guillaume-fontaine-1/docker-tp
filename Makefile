@@ -39,4 +39,4 @@ exec-db-shell:
 
 # Réaliser un dump de la base de données docker_doc_dev
 dump-dev-db:
-	$(DOCKER_COMPOSE) exec $(MYSQL_CONTAINER) mysqldump -u db_client -p${MYSQL_PASSWORD} docker_doc_dev > $(MYSQL_DUMP_FILE)
+	$(DOCKER_COMPOSE) exec $(MYSQL_CONTAINER) mysqldump -u root -p docker_doc_dev > $(MYSQL_DUMP_FILE)

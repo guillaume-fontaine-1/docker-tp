@@ -80,20 +80,14 @@ SELECT * FROM articles;
 Pour réaliser un dump sans ouvrir de session bash, utilisez :
 
 ```sh
-docker compose exec database mysqldump -u db_client -ppassword docker_doc_dev > dump.sql
+docker compose exec database mysqldump -u root -p docker_doc_dev > dump.sql
+# (Entrer le mot de passe: root)
 ```
 
 ### 5. Script PHP pour interroger la base de données
 
 L'URL locale pour accéder à cette page web sera `http://localhost:8080`.
 
-### 6. Configuration de l’environnement de développement
-
-Pour relancer le projet et recharger les sources, utilisez :
-
-```sh
-docker compose up -d
-```
 
 
 ### Commandes pour lancer le projet
@@ -110,6 +104,11 @@ Pour l’environnement de production :
 docker compose --env-file .env.prod up -d
 ```
 
+Pour relancer le projet et recharger les sources, utilisez :
+
+```sh
+docker compose up -d
+```
 
 #
 # Instructions pour utiliser le Makefile
